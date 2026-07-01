@@ -9,6 +9,10 @@ const identity = {
 };
 
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Figma', 'Markdown'];
+
+const lucky = true;
+const endOfTheWeek = false;
+const goal = 4;
 ---
 
 <html lang="en">
@@ -34,6 +38,9 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Figma', 'Markdown'];
         <ul>    
             {skills.map((skill) => <li>{skill}</li>)}
         </ul>
+        {lucky && <p>I am very lucky to have had the life that I have had so far.</p>}
+        {endOfTheWeek && <p>I finished setting up the blog!</p>}
+        {goal === 4 ? <p>My goal is to finish the blog by the end of the week.</p> : <p>I did not finish the blog by the end of the week.</p>}
         <p>This blog is where I'll share my learning journey, projects, and experiences as I continue to develop my skills and explore the ever-evolving world of web development.</p>
     </body>
 </html>
