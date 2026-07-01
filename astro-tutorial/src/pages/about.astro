@@ -1,5 +1,14 @@
 ---
 const pageTitle = 'About Me';
+
+const identity = {
+    firstName: 'Kristie',
+    country: 'United Kingdom',
+    occupation: 'UX Engineer',
+    hobbies: ['web development','reading','design']
+};
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Figma', 'Markdown'];
 ---
 
 <html lang="en">
@@ -19,8 +28,12 @@ const pageTitle = 'About Me';
         </nav>
 		<h1>{pageTitle}</h1>
         <h2>And my life so far...</h2>
-        <p>Hello! I'm Kristie, a web developer based in the United Kingdom with a passion for creating websites and continually learning new technologies.</p>
-        <p>My interest in web development began when I was 24 years old, and it has grown into a genuine passion for building projects, solving problems, and exploring modern web technologies. One of the things I enjoy most about development is that there's always something new to learn, whether it's a new framework, programming technique, or design approach.</p>
+        <p>Hello! My name is {identity.firstName}, a {identity.occupation} based in the {identity.country} with a passion for creating websites and continually learning new technologies.</p>
+        <p>My interest in {identity.hobbies[0]} began when I was 24 years old, and it has grown into a genuine passion for building projects, solving problems, and exploring modern web technologies. One of the things I enjoy most about development is that there's always something new to learn, whether it's a new framework, programming technique, or {identity.hobbies[2]} approach, which is great! Because I also enjoy {identity.hobbies[1]}.</p>
+        <p>Here is a few of my skills:</p>
+        <ul>    
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
         <p>This blog is where I'll share my learning journey, projects, and experiences as I continue to develop my skills and explore the ever-evolving world of web development.</p>
     </body>
 </html>
