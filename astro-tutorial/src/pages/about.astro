@@ -1,5 +1,6 @@
 ---
 import Navigation from '../pages/components/Navigation.astro';
+import Footer from '../pages/components/Footer.astro';
 
 import '../styles/global.css';
 import '../styles/main-navigation.css';
@@ -46,5 +47,6 @@ const goal = 4;
         {endOfTheWeek && <p>I finished setting up the blog!</p>}
         {goal === 4 ? <p>My goal is to finish the blog by the end of the week.</p> : <p>I did not finish the blog by the end of the week.</p>}
         <p>This blog is where I'll share my learning journey, projects, and experiences as I continue to develop my skills and explore the ever-evolving world of web development.</p>
+        <Footer />
     </body>
 </html>
