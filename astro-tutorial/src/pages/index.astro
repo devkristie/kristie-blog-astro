@@ -1,4 +1,6 @@
 ---
+import Navigation from '../pages/components/Navigation.astro';
+
 import '../styles/global.css';
 import '../styles/main-navigation.css';
 import '../styles/responsive/mobile.css';
@@ -20,11 +22,7 @@ const headingOneColor = '#4D0C2E';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-        </nav>
+		<Navigation />
 		<h1 style={`color: ${headingOneColor}`}>Kristie's Blog</h1>
 	</body> 
 </html>
