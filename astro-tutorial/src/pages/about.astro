@@ -1,5 +1,5 @@
 ---
-import Navigation from '../pages/components/Navigation.astro';
+import Header from '../pages/components/Header.astro';
 import Footer from '../pages/components/Footer.astro';
 
 import '../styles/global.css';
@@ -34,7 +34,7 @@ const goal = 4;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
 		<h1>{pageTitle}</h1>
         <h2>And my life so far...</h2>
         <p>Hello! My name is {identity.firstName}, a {identity.occupation} based in the {identity.country} with a passion for creating websites and continually learning new technologies.</p>
