@@ -1,5 +1,7 @@
 ---
+import '../../styles/social-navigation.css';
+
 const { url, text } = Astro.props;
 ---
 
-<a href={url}>{text}</a>
+<a class="social-links" href={url}>{text}</a>
