@@ -1,20 +1,18 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .navigation-links nav {
-        padding-right: 25px;
+    .navigation-links {
+        visibility: visible;
     }
 
-    .navigation-links nav a {
-        margin: 0 25px 0 0;
-        padding: 10px 25px 10px 25px;
-        font-size: 1.1rem;
+    .navigation-links nav {
+        background-color: #9E1C62;
+        text-align: end;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .navigation-links nav a {
-        margin: 0 50px 0 0;
+    .navigation-links a {
         font-size: 1.2rem;
     }
 }
