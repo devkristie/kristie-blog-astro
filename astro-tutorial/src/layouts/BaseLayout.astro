@@ -2,10 +2,10 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-import '../../styles/global.css';
-import '../../styles/responsive/mobile.css';
-import '../../styles/responsive/tablet.css';
-import '../../styles/responsive/desktop.css';
+import '../styles/global.css';
+import '../styles/responsive/mobile.css';
+import '../styles/responsive/tablet.css';
+import '../styles/responsive/desktop.css';
 
 const { pageTitle } = Astro.props;
 ---
@@ -24,7 +24,7 @@ const { pageTitle } = Astro.props;
         <slot />
 		<Footer />
 		<script>
-    		import "../../scripts/navigation-menu-toggle.js";
+    		import "../scripts/navigation-menu-toggle.js";
 		</script>
 	</body> 
 </html>
