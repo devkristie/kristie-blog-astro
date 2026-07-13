@@ -1,19 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
 
 // Defines which dynamic routes Astro should generate.
 export async function getStaticPaths() {
+    // Return array of object values.
+    const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
     // Each object represents one page route that Astro should generate.
     return [
-        { params: { tag: "kristie" } }, // The tag value replaces the [tag] part of [tag].astro
-        { params: { tag: "blog" } },
-        { params: { tag: "learning" } }
+        {params: {tag: "kristie"}, props: {posts: allPosts}}, // The tag value replaces the [tag] part of [tag].astro
+        {params: {tag: "blog"}, props: {posts: allPosts}}, // Pass all blog posts into each tag page so they can be used later.
+        {params: {tag: "learning"}, props: {posts: allPosts}}
     ];
 }
 
 const { tag } = Astro.params; // Gets the current tag value from the URL
+const { posts } = Astro.props; // Get the blog posts passed from getStaticPaths().
+
+// Keep only posts that contain the current tag.
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
 ---
 
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
+    <p>Posts tagged with {tag}:</p>
+    <ul>
+        {filteredPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)} <!-- Display each post that matches this tag. -->
+    </ul>
 </BaseLayout>
