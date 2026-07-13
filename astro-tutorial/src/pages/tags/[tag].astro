@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Defines which dynamic routes Astro should generate.
+export async function getStaticPaths() {
+    // Each object represents one page route that Astro should generate.
+    return [
+        { params: { tag: "kristie" } }, // The tag value replaces the [tag] part of [tag].astro
+        { params: { tag: "blog" } },
+        { params: { tag: "learning" } }
+    ];
+}
+
+const { tag } = Astro.params; // Gets the current tag value from the URL
+---
+
+<BaseLayout pageTitle={tag}>
+    <p>Posts tagged with {tag}</p>
+</BaseLayout>
