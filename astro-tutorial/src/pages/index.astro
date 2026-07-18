@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting.jsx';
 
 const pageTitle = 'Home';
 
@@ -9,4 +10,5 @@ const headingOneColor = '#4D0C2E';
 <BaseLayout pageTitle={pageTitle}>
 	<h1 style={`color: ${headingOneColor}`}>Kristie's Blog</h1>
 	<h2>My blog subtitle</h2>
+	<Greeting client:load messages={["Welcome", "Hello", "Hi", "Greetings"]} />
 </BaseLayout>
