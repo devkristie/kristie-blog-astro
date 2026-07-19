@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from 'astro:content'; // Get blog posts from the content collection and convert Markdown to HTML.
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  // Create a page route for each blog post.
+  return posts.map(post => ({
+    params: { slug: post.id }, props: { post },
+  }));
+}
+
+// Get the post data passed into this page.
+const { post } = Astro.props;
+
+// Render the Markdown content.
+const { Content } = await render(post);
+---
+
+<MarkdownPostLayout frontmatter={post.data}>
+    <Content />
+</MarkdownPostLayout>
